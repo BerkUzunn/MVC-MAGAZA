@@ -1,0 +1,30 @@
+﻿@using MVC_MAGAZA.Models.Entity;
+@model List<TBLSATISLAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table>
+    <tr>
+        <th>SATIŞ ID</th>
+        <th>ÜRÜN</th>
+        <th>MÜŞTERİ</th>
+        <th>ADET</th>
+        <th>FİYAT</th>
+    </tr>
+
+    <tbody>
+        @foreach(var sts in Model)
+            {
+        <tr>
+            <td>@sts.SATISID</td>
+            <td>@sts.URUN</td>
+            <td>@sts.MUSTERI</td>
+            <td>@sts.ADET</td>
+            <td>@sts.FIYAT</td>
+        </tr>
+            }
+    </tbody>
+</table>
+

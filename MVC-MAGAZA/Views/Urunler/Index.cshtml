@@ -1,0 +1,38 @@
+﻿@using MVC_MAGAZA.Models.Entity
+@model List<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table>
+    <tr>
+        <th>ÜRÜN ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>MARKA</th>
+        <th>ÜRÜN KATEGORİ</th>
+        <th>FİYAT</th>
+        <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <td>@urn.URUNID</td>
+                <td>@urn.URUNADI</td>
+                <td>@urn.MARKA</td>
+                <td>@urn.URUNKATEGORI</td>
+                <td>@urn.FIYAT</td>
+                <td>@urn.STOK</td>
+                <td><a href="/Urunler/SİL/@urn.URUNID" class="btn btn-danger">SİL</a> </td>
+                <td><a href="/Urunler/GÜNCELLE/@urn.URUNID" class="btn btn-success">GÜNCELLE</a> </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Urunler/YeniÜrün" class="btn-primary">Yeni Ürün Ekle</a>
+

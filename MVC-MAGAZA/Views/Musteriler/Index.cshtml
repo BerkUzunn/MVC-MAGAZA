@@ -1,0 +1,32 @@
+﻿@using MVC_MAGAZA.Models.Entity;
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table>
+    <tr>
+        <th>MÜŞTERİ ID</th>
+        <th>MÜŞTERİ ADI</th>
+        <th>MÜŞTERİ SOYADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    <tbody>
+        @foreach (var mtr in Model)
+        {
+            <tr>
+                <td>@mtr.MUSTERIID</td>
+                <td>@mtr.MUSTERIAD</td>
+                <td>@mtr.MUSTERISOYAD</td>
+                <td><a href="/MUsteriler/SİL/@mtr.MUSTERIID" class="btn btn-danger">SİL</a> </td>
+                <td><a href="/MUsteriler/GÜNCELLE/@mtr.MUSTERIID" class="btn btn-success">GÜNCELLE</a> </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/MUsteriler/YeniMüsteri" class="btn-primary">Yeni Müşteri Ekle</a>
+

@@ -1,0 +1,38 @@
+﻿@model MVC_MAGAZA.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "YeniÜrün";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>ÜRÜN ADI </label>
+        <input type="text" class="form-control" name="URUNADI" />
+    </div>
+    <div>
+
+        <label>MARKA </label>
+        <input type="text" class="form-control" name="MARKA" />
+    </div>
+    <div>
+
+        <label>ÜRÜN KATEGORİ </label>
+       @Html.DropDownListFor(m=>m.KATEGORIAD,(List<SelectListItem>)ViewBag.dgr,new {@class="for-control"});
+    </div>
+    <div>
+
+        <label>FİYAT </label>
+        <input type="text" class="form-control" name="FIYAT" />
+    </div>
+    <div>
+
+        <label>STOK </label>
+        <input type="text" class="form-control" name="STOK" />
+    </div>
+
+    <div style="margin-top:15px">
+
+        <button class="btn btn-info">Ürün Ekle </button>
+    </div>
+</form>
+
